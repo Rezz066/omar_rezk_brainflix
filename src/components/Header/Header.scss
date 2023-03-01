@@ -1,0 +1,88 @@
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/global.scss' as *;
+
+.header {
+    margin: 0;
+    padding: 1rem;
+    background-color: $primary-white-color;
+
+    &__container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    &__logo{
+        width: 7.5rem;
+        height: 1.5625rem;
+    }
+
+    &__box{
+        padding-bottom: 1rem;
+        display: flex;
+        align-items: baseline;
+    }
+
+    &__input{
+        width: 15rem;
+        height: 2.25rem;
+        border-radius: .25rem;
+        padding: .75rem;
+        border: 1px solid $secondary-mercury-color;
+
+    }
+
+    &__searchicon{
+            position: absolute;
+    }
+
+    &__avatar{
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        object-fit: cover;
+        position: relative;
+        top: 0.9rem;
+        left: 0.9rem;
+
+    }
+    &__button{
+        background-color: $primary-brainflix-blue-color;
+        color: $primary-white-color;
+        font-size: 1rem;
+        border: 0;
+        line-height: 1.25rem;
+        font-weight: 700;
+        border-radius: .25rem;
+        width: 100%;
+        text-transform: uppercase;
+        display: flex;
+        gap: 5rem;
+        padding: 1rem;
+        cursor: pointer;
+    }
+}
+
+// .nav__upload-button {
+//     line-height: $mobile-LabelsButtons-lineheight;
+//     font-size: $mobile-LabelsButtons-textsize;
+//     background: $BrainFlix-Blue;
+//     color: $BrainFLix-White;
+//     border-radius: $CTA-border-radius;
+//     width: 100%;
+//     height: $CTA-height;
+//     text-transform: uppercase;
+//     font-weight: $fontWeight-bold;
+//     align-items: center;
+//     display: flex;
+//     gap: 5rem;
+//     cursor: pointer;
+//     padding-left: 1rem;
+//     border: $form-default-border;
+// }
+// .nav__upload-button:hover {
+//     background: $DarkBlue;
+// }
