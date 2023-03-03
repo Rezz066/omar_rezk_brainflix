@@ -3,13 +3,13 @@
 @use '../../styles/partials/typography.scss' as *;
 @use '../../styles/partials/global.scss' as *;
 
-.nav{
-    padding: 1rem 1rem 0 1rem;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
 
-    // @include tablet{
-    //     flex-direction: row;
-    // }
+.videoList{
+    padding: 0 1rem 0 1rem;
+    &__title{
+        font-size: 1rem;
+        padding-bottom: 1rem;
+        color: $primary-silver-color;
+        font-weight: 700;
+    }
 }

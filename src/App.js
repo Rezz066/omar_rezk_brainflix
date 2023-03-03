@@ -5,6 +5,7 @@ import videoData from '../src/data/video-details.json'
 import data from '../src/data/videos.json'
 import { useState } from "react"
 import Comment from '../src/components/Comment/Comment'
+import VideoList from '../src/components/VideoList/VideoList'
 
 export default function App() {
 
@@ -26,6 +27,9 @@ export default function App() {
     onClickVavItem={setDefaultVideo}/>
 
     <Comment/>
+    <VideoList
+    videoOption = {defaultVideo}
+    videoData = {videoData}/>
     </>
   );
 }

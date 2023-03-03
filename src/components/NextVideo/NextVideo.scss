@@ -1,0 +1,38 @@
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/global.scss' as *;
+
+.nextVideo{
+    display: flex;
+    padding-bottom: 1rem;
+
+
+    &__image{
+        width: 11rem;
+        height: 6.5rem;
+        object-fit: cover;
+        aspect-ratio: 16/9;
+        border-radius: 4px ;
+
+    }
+
+    &__box{
+        padding-left: 1rem;
+        width: 65%;
+    }
+
+    &__title{
+        margin-bottom: .5rem;
+        font-size: .8125rem;
+        line-height: 1.125rem;
+        font-weight: 700;
+    }
+
+    &__text{
+        font-size: .8125rem;
+        line-height: 1.125rem;
+        font-weight: 400;
+
+    }
+}

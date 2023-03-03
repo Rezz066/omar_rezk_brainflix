@@ -60,8 +60,16 @@
         padding: 1rem;
         cursor: pointer;
         display: flex;
-        gap: 12rem;
+        position: relative;
+        justify-content: center;
         align-items: center;
+    }
+
+    &__icon{
+        position: absolute;  
+        left: 1.025rem;
+
+
     }
 
     &__button p{

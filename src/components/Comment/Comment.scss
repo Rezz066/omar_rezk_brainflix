@@ -19,6 +19,8 @@
         flex-direction: row;
         padding: 0 1rem 1rem 0;
         margin: 0;
+        justify-content: center;
+        width: 100%;
 
     }
 
@@ -30,19 +32,27 @@
     }
 
     &__box{
-        margin-left: 1rem;
+        padding: 0 1rem 1rem 1rem;
+        width: 100%;
     }
 
     &__message{
-        width: 15rem;
+        font-family: 'AvenirNextLTPro', sans-serif;
+        width: 100%;
         height: 2.25rem;
         border-radius: .25rem;
-        padding: 0.75rem 0.75rem 0.75rem 2rem;
         border: 1px solid $secondary-mercury-color;
-        outline: none !important;
-        flex-grow: 1;
+        height: 8rem;
+        padding: .75rem;
+        margin-bottom: 1rem;
+        resize: none;
 
     }
+
+    &__message::placeholder{
+        color: $primary-brainflix-black-color;
+    }
+
     &__button{
 
         background-color: $primary-brainflix-blue-color;
