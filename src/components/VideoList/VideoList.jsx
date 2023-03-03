@@ -19,11 +19,11 @@ const VideoList = (props) => {
                     videoContentChannel ={videoItems.channel}
                     videoContentId ={videoItems.id}
                     videoContentKey={videoItems.id}
-                   />
+                    />
                     </>
                 );
             })}
-            </div>
+        </div>
     )
 };
 

@@ -1,0 +1,74 @@
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/global.scss' as *;
+
+.videoComments {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+    padding: 1.5rem 0 1rem 1rem;
+    margin-right: 2.5rem;
+
+    @include tablet{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__container {
+        width: 100%;
+        padding: 1.5rem 0 1rem 1rem;
+
+    }
+
+    &__box{
+        width: 100%;
+        border-bottom: 1px solid $secondary-mercury-color;
+
+    }
+
+    &__avatar {
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        float: left;
+        position: relative;
+        top: 0.5rem;
+        left: -0.5rem;
+        background-color: $secondary-mercury-color;
+
+    }
+
+    &__header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+
+    }
+
+    &__title{
+        font-size: 1rem;
+        font-weight: 600;
+        color: $primary-brainflix-black-color;
+
+    }
+
+    &__date{
+        font-size: 1rem;
+        font-weight: 400;
+        color: $primary-brainflix-black-color;
+    }
+
+    &__text{
+        font-size: 1rem;
+        font-weight: 400;
+        color: $primary-brainflix-black-color;
+        padding-left: 2.5rem;
+        padding-bottom: 1.5rem;
+
+
+    }
+
+}

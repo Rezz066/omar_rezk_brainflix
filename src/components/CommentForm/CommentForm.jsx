@@ -1,4 +1,4 @@
-import './Comment.scss'
+import './CommentForm.scss'
 import avatarImage from '../../assets/images/Mohan-muruge.jpg'
 import commentIcon from '../../assets/icons/add_comment.svg'
 
