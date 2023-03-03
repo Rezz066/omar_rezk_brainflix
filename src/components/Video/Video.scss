@@ -1,0 +1,13 @@
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/global.scss' as *;
+
+.banner{
+    padding: 1rem 0 1rem 0;
+
+    &__video{
+        width: 100%;
+    }
+
+}

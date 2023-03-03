@@ -1,10 +1,12 @@
 import './App.css';
-import Header from './components/Header/Header'
+import Nav from './components/Nav/Nav'
+import Video from './components/Video/Video'
 
 function App() {
   return (
     <>
-    <Header/>
+    <Nav/>
+    <Video/>
     </>
   );
 }

@@ -4,35 +4,40 @@
 @use '../../styles/partials/global.scss' as *;
 
 .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0;
-    padding: 1rem;
     background-color: $primary-white-color;
 
-    &__container{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-    }
-
-    &__logo{
-        width: 7.5rem;
-        height: 1.5625rem;
+    &__items{
+        padding: 1rem;
+        width: 100vw;
     }
 
     &__box{
         padding-bottom: 1rem;
         display: flex;
-        align-items: baseline;
+        flex-direction: row;
     }
 
     &__input{
+        background-image: url('../../assets/icons/search.svg');
+        background-size: 1rem;
+        background-repeat: no-repeat;
+        background-position: .4rem;
         width: 15rem;
         height: 2.25rem;
         border-radius: .25rem;
-        padding: .75rem;
+        padding: 0.75rem 0.75rem 0.75rem 2rem;
         border: 1px solid $secondary-mercury-color;
+        outline: none !important;
+        flex-grow: 1;
 
+    }
+
+    &__input::placeholder{
+        color: $primary-brainflix-black-color;
     }
 
     &__searchicon{
@@ -44,45 +49,26 @@
         height: 2.25rem;
         border-radius: 50%;
         object-fit: cover;
-        position: relative;
-        top: 0.9rem;
-        left: 0.9rem;
+        margin-left: .5rem;
 
     }
     &__button{
         background-color: $primary-brainflix-blue-color;
-        color: $primary-white-color;
-        font-size: 1rem;
         border: 0;
-        line-height: 1.25rem;
-        font-weight: 700;
         border-radius: .25rem;
         width: 100%;
-        text-transform: uppercase;
-        display: flex;
-        gap: 5rem;
         padding: 1rem;
         cursor: pointer;
+        display: flex;
+        gap: 12rem;
+        align-items: center;
+    }
+
+    &__button p{
+        color: $primary-white-color;
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.25rem;
+        font-weight: 700;
     }
 }
-
-// .nav__upload-button {
-//     line-height: $mobile-LabelsButtons-lineheight;
-//     font-size: $mobile-LabelsButtons-textsize;
-//     background: $BrainFlix-Blue;
-//     color: $BrainFLix-White;
-//     border-radius: $CTA-border-radius;
-//     width: 100%;
-//     height: $CTA-height;
-//     text-transform: uppercase;
-//     font-weight: $fontWeight-bold;
-//     align-items: center;
-//     display: flex;
-//     gap: 5rem;
-//     cursor: pointer;
-//     padding-left: 1rem;
-//     border: $form-default-border;
-// }
-// .nav__upload-button:hover {
-//     background: $DarkBlue;
-// }
