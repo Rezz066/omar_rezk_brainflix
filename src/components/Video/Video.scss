@@ -8,6 +8,65 @@
 
     &__video{
         width: 100%;
+
     }
 
+}
+
+.video__container{
+    padding: 0 1rem 0 1rem;
+    width: 100%;
+
+    &-title{
+        font-weight: 600;
+        font-size: 2rem;
+        margin: 0 0 1rem 0;
+    }
+
+    &-box{
+        display: flex;
+        border-bottom: .0625rem solid $secondary-mercury-color;
+        border-top: .0625rem solid $secondary-mercury-color;
+        
+    }
+
+    &-boxInfo{
+        width: calc(50% - 1rem);
+    }
+
+    &-name{
+        padding: 1rem 0 1rem 0;
+        color: $secondary-brainflix-darkblack-color;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    &-date{
+        padding: 1rem 0 1rem 0;
+        color: $primary-silver-color;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    &-watch{
+        padding: 1rem 0 1rem 0;
+        color: $primary-silver-color;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    &-like{
+        padding: 1rem 0 1rem 0;
+        color: $primary-silver-color;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    &-image{
+        padding-right: .5rem;
+    }
+
+    &-description{
+        padding: 1rem 0 1rem 0;
+    }
 }
