@@ -1,0 +1,67 @@
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/global.scss' as *;
+
+.form {
+    padding: 1rem;
+    display: flex;
+
+    &__title {
+        font-size: 1rem;
+        color: $primary-silver-color;
+        font-weight: 400;
+        margin: 0;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        padding: 0 1rem 1rem 0;
+        margin: 0;
+
+    }
+
+    &__avatar{
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    &__box{
+        margin-left: 1rem;
+    }
+
+    &__message{
+        width: 15rem;
+        height: 2.25rem;
+        border-radius: .25rem;
+        padding: 0.75rem 0.75rem 0.75rem 2rem;
+        border: 1px solid $secondary-mercury-color;
+        outline: none !important;
+        flex-grow: 1;
+
+    }
+    &__button{
+
+        background-color: $primary-brainflix-blue-color;
+        border: 0;
+        border-radius: .25rem;
+        width: 100%;
+        padding: 1rem;
+        cursor: pointer;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    &__comment{
+        color: $primary-white-color;
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.25rem;
+        font-weight: 700;
+    }
+
+}

@@ -4,6 +4,7 @@ import Video from './components/Video/Video'
 import videoData from '../src/data/video-details.json'
 import data from '../src/data/videos.json'
 import { useState } from "react"
+import Comment from '../src/components/Comment/Comment'
 
 export default function App() {
 
@@ -18,10 +19,13 @@ export default function App() {
   return (
     <>
     <Nav/>
+    
     <Video
     videosList={data}
     activeVideo={defaultVideo}
     onClickVavItem={setDefaultVideo}/>
+
+    <Comment/>
     </>
   );
 }
