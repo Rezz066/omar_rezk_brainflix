@@ -6,10 +6,20 @@
 
 .videoList{
     padding: 0 1rem 0 1rem;
+
+    @include tablet{
+        padding: 0 2.25rem 0 2.25rem;
+    }
+    
     &__title{
         font-size: 1rem;
         padding-bottom: 1rem;
+        padding-top: 1rem;
         color: $primary-silver-color;
         font-weight: 700;
+
+        @include tablet{
+            font-weight: 600;
+        }
     }
 }

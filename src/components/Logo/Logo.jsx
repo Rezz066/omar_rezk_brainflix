@@ -6,7 +6,7 @@ import logo from '../../assets/logo/BrainFlix-logo.svg'
 const Logo = () => {
     return (
         <>
-            <a href="#">
+            <a href="/">
                 <img className="logo" src={logo} alt="brainflix-logo"/>
             </a> 
         </>

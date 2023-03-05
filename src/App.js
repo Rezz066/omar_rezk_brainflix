@@ -11,6 +11,7 @@ import Comments from '../src/components/Comments/Comments'
 export default function App() {
 
   const [defaultVideo, setDefaultVideo] = useState(videoData[0]);
+  
   function selectVideo(id) {
     const selectedVideo = videoData.find((video) => {
       return id === video.id;
@@ -24,13 +25,21 @@ export default function App() {
     <Video
     videosList={data}
     activeVideo={defaultVideo}
-    onClickVavItem={setDefaultVideo}/>
+    />
 
-    <CommentForm/>
-    <Comments videoData = {videoData}/>
+    <CommentForm
+    activeVideo={defaultVideo}
+    />
+
+    <Comments 
+    videoData = {videoData}
+    activeVideo={defaultVideo}
+    />
     <VideoList
+    selectVideo = {selectVideo}
     videoOption = {defaultVideo}
     videoData = {videoData}/>
+    
     </>
   );
 }

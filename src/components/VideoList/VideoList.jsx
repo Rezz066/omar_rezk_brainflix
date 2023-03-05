@@ -3,10 +3,11 @@ import NextVideo from '../NextVideo/NextVideo'
 
 import React from 'react';
 
-const VideoList = (props) => {
-    const inactiveVids = props.videoData.filter((vids) => {
-        return vids.id !== props.videoOption.id;
+const VideoList = ({selectVideo, videoOption, videoData}) => {
+    const inactiveVids = videoData.filter((vids) => {
+        return vids.id !== videoOption.id;
     });
+
     return (
         <div className="videoList">
             <h3 className="videoList__title">NEXT VIDEOS</h3>
@@ -14,11 +15,12 @@ const VideoList = (props) => {
                 return (
                     <>
                    <NextVideo
-                   videoContentImage = {videoItems.image}
-                    videoContentTitle ={videoItems.title}
-                    videoContentChannel ={videoItems.channel}
-                    videoContentId ={videoItems.id}
-                    videoContentKey={videoItems.id}
+                    image = {videoItems.image}
+                    title ={videoItems.title}
+                    channel ={videoItems.channel}
+                    id ={videoItems.id}
+                    key={videoItems.id}
+                    selectVideo={selectVideo}
                     />
                     </>
                 );

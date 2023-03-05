@@ -6,14 +6,11 @@
 .videoComments {
     display: flex;
     flex-direction: column;
-    padding-bottom: 2rem;
-    padding: 1.5rem 0 1rem 1rem;
-    margin-right: 2.5rem;
+    padding: .5rem 1rem .5rem 1rem;    
 
     @include tablet{
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
+        padding: 0 2.25rem 0 2.25rem;
+        position: relative;
     }
 
     &__container {
@@ -38,6 +35,14 @@
         left: -0.5rem;
         background-color: $secondary-mercury-color;
 
+        @include tablet{
+            width: 3.25rem;
+            height: 3.25rem;
+            position: absolute;
+            left: 2.0375rem;
+            top: .9rem;
+        }
+
     }
 
     &__header{
@@ -45,6 +50,11 @@
         flex-direction: row;
         justify-content: space-between;
         padding-bottom: 1rem;
+
+        @include tablet{
+            padding-top: 1rem;
+            margin-left: 5.2rem;
+        }
 
     }
 
@@ -58,7 +68,7 @@
     &__date{
         font-size: 1rem;
         font-weight: 400;
-        color: $primary-brainflix-black-color;
+        color: $primary-silver-color;
     }
 
     &__text{
@@ -67,6 +77,10 @@
         color: $primary-brainflix-black-color;
         padding-left: 2.5rem;
         padding-bottom: 1.5rem;
+
+        @include tablet{
+            margin-left: 2.7rem;
+        }
 
 
     }

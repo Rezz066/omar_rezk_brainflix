@@ -13,13 +13,45 @@
     &__items{
         padding: 1rem;
         width: 100vw;
+
+        @include tablet{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            gap: 1rem;
+            padding-right: 0;
+        }
     }
 
     &__box{
         padding-bottom: 1rem;
         display: flex;
         flex-direction: row;
+
+        @include tablet{
+            padding-bottom: 0;
+        }
+
     }
+
+    &__box :nth-child(1) { 
+        order: 1; 
+
+    }
+    &__box :nth-child(2) { 
+        order: 2; 
+
+        @include tablet{
+            order: 3;
+        }
+    }
+    &__box :nth-child(3) { 
+        order: 3; 
+
+        @include tablet{
+            order:2;
+        }
+    } 
 
     &__input{
         background-image: url('../../assets/icons/search.svg');
@@ -33,6 +65,10 @@
         border: 1px solid $secondary-mercury-color;
         outline: none !important;
         flex-grow: 1;
+
+        @include tablet {
+            height: 3.25rem;
+        }
 
     }
 
@@ -51,7 +87,38 @@
         object-fit: cover;
         margin-left: .5rem;
 
+        @include tablet{
+            width: 3.25rem;
+            height: 3.25rem; 
+        }
+
     }
+
+    &__upload{
+        display: none;
+
+        @include tablet{
+            background-color: $primary-brainflix-blue-color;
+            border: 0;
+            border-radius: .25rem;
+            width: 15rem;            
+            padding: 1rem;
+            cursor: pointer;
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            height: 3.25rem;
+            color: $primary-white-color;
+            text-align: center;
+            font-size: 1rem;
+            line-height: 1.25rem;
+            font-weight: 700;
+            margin-left: 1rem;
+
+        }
+    }
+
     &__button{
         background-color: $primary-brainflix-blue-color;
         border: 0;
@@ -63,6 +130,10 @@
         position: relative;
         justify-content: center;
         align-items: center;
+
+        @include tablet {
+            display: none;
+        }
     }
 
     &__icon{

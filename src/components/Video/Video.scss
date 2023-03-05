@@ -8,7 +8,6 @@
 
     &__video{
         width: 100%;
-
     }
 
 }
@@ -17,21 +16,51 @@
     padding: 0 1rem 0 1rem;
     width: 100%;
 
+    @include tablet{
+        padding: 0 2.25rem 0 2.25rem;
+    }
+
     &-title{
-        font-weight: 600;
-        font-size: 2rem;
+        font-weight: 700;
+        font-size: 1.5rem;
         margin: 0 0 1rem 0;
+
+        @include tablet{
+            font-size: 2.0625rem;
+        }
     }
 
     &-box{
         display: flex;
         border-bottom: .0625rem solid $secondary-mercury-color;
         border-top: .0625rem solid $secondary-mercury-color;
+
+        @include tablet{
+            border-top: none;
+            justify-content: space-between;
+        }
         
     }
 
-    &-boxInfo{
+    &-boxInfo-left{
         width: calc(50% - 1rem);
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
+    }
+
+    &-boxInfo-right{
+        width: calc(50% - 1rem);
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
     }
 
     &-name{
@@ -39,6 +68,10 @@
         color: $secondary-brainflix-darkblack-color;
         font-size: 1rem;
         font-weight: 700;
+
+        @include tablet{
+            font-size: 1.2rem;
+        }
     }
 
     &-date{
@@ -46,6 +79,10 @@
         color: $primary-silver-color;
         font-size: 1rem;
         font-weight: 400;
+
+        @include tablet{
+            font-size: 1.2rem;
+        }
     }
 
     &-watch{
@@ -53,6 +90,11 @@
         color: $primary-silver-color;
         font-size: 1rem;
         font-weight: 400;
+        display: flex;
+
+        @include tablet{
+            font-size: 1.2rem;
+        }
     }
 
     &-like{
@@ -60,6 +102,11 @@
         color: $primary-silver-color;
         font-size: 1rem;
         font-weight: 400;
+        display: flex;
+
+        @include tablet{
+            font-size: 1.2rem;
+        }
     }
 
     &-image{
@@ -68,5 +115,16 @@
 
     &-description{
         padding: 1rem 0 1rem 0;
+    }
+
+    &-summary{
+        font-size: 1rem;
+        line-height: 1.125rem;
+        font-weight: 400;
+
+        @include tablet {
+            font-size: 1.2rem;
+            line-height: 1.675rem;
+        }
     }
 }

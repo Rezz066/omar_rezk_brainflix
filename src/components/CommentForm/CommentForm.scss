@@ -5,13 +5,20 @@
 
 .form {
     padding: 1rem;
-    display: flex;
+
+    @include tablet{
+            padding: 0 2.25rem 0 2.25rem;
+    }
 
     &__title {
         font-size: 1rem;
         color: $primary-silver-color;
         font-weight: 400;
         margin: 0;
+
+        @include tablet{
+            margin-left: 2rem;
+        }
     }
 
     &__container {
@@ -22,6 +29,13 @@
         justify-content: center;
         width: 100%;
 
+        @include tablet{
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-right: 0;
+        }
+
     }
 
     &__avatar{
@@ -29,11 +43,31 @@
         height: 2.25rem;
         border-radius: 50%;
         object-fit: cover;
+
+        @include tablet{
+            width: 3.25rem;
+            height: 3.25rem;
+            position: absolute;
+            left: 0px;
+            bottom: 1.2125rem;
+        }
     }
 
     &__box{
         padding: 0 1rem 1rem 1rem;
         width: 100%;
+
+        @include tablet{
+            padding: 0 2.25rem 0 2.25rem;
+            margin-left: 1rem;
+        }
+    }
+
+    &__numComments{
+        font-size: 1.2rem;
+        line-height: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
     }
 
     &__message{
@@ -46,6 +80,13 @@
         padding: .75rem;
         margin-bottom: 1rem;
         resize: none;
+
+        @include tablet{
+            min-width: 26.2rem;
+            max-width: 56rem;
+            height: 3.25rem;
+            margin: .5rem 0 0 2rem;
+        }
 
     }
 
@@ -64,7 +105,46 @@
         display: flex;
         gap: 2rem;
         align-items: center;
+
+        @include tablet{
+            display: none;
+        }
+
     }
+
+    &__button--link:hover{
+        background-color: $secondary-brainflix-darkblue-color;
+    }
+
+    &__buttonTab{
+
+        display: none;
+        background-color: $primary-brainflix-blue-color;
+        border: 0;
+        border-radius: .25rem;
+        width: 100%;
+        padding: 1rem;
+        cursor: pointer;
+        gap: 2rem;
+        align-items: center;
+
+        @include tablet{
+            display: inline-block;
+            min-width: 11rem;
+            max-width: 12rem;
+            height: 3.25rem;
+            margin-top: 1.4rem;
+            display: flex;
+            margin-left: 1rem;
+        }
+
+    }
+
+    &__buttonTab--link:hover{
+        background-color: $secondary-brainflix-darkblue-color;
+    }
+
+
 
     &__comment{
         color: $primary-white-color;
