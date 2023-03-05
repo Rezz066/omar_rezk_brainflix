@@ -1,0 +1,21 @@
+@use '../src/styles/partials/variables.scss' as *;
+@use '../src/styles/partials/mixins.scss' as *;
+@use '../src/styles/partials/typography.scss' as *;
+@use '../src/styles/partials/global.scss' as *;
+
+.app{
+
+    @include desktop{
+        display: flex;
+    }
+
+    &__container{
+        
+        @include desktop{
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid $primary-silver-color;
+            padding-top: 1.5rem;
+        }
+    }
+}

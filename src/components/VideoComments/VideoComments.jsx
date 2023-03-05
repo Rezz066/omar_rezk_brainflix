@@ -4,7 +4,6 @@ import './VideoComments.scss'
 
 
 const VideoComments = (props) => {
-console.log(props.videoData)
     return (
                 <div className ="videoComments">
                     <div className ="videoComments__box">

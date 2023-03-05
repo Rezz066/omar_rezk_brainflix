@@ -12,12 +12,8 @@ function stringDate(dateInput) {
 
 const Video = ({activeVideo}) => {
 
-
     return (
         <>
-            <div className="banner">
-                <video className="banner__video controls" controls width="250" poster={activeVideo.image}></video>
-            </div>
             <div className="video__container">
                 <h1 className="video__container-title">{activeVideo.title}</h1>
                 <div className="video__container-box">

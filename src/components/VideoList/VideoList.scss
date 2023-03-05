@@ -10,6 +10,10 @@
     @include tablet{
         padding: 0 2.25rem 0 2.25rem;
     }
+
+    @include desktop{
+        padding-top: 1.5rem;
+    }
     
     &__title{
         font-size: 1rem;
@@ -20,6 +24,7 @@
 
         @include tablet{
             font-weight: 600;
+            padding-top: 0;
         }
     }
 }

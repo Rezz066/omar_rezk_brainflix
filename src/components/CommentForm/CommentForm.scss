@@ -80,6 +80,7 @@
         padding: .75rem;
         margin-bottom: 1rem;
         resize: none;
+        outline: none;
 
         @include tablet{
             min-width: 26.2rem;

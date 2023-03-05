@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import Nav from './components/Nav/Nav'
 import Video from './components/Video/Video'
 import videoData from '../src/data/video-details.json'
@@ -7,6 +7,7 @@ import { useState } from "react"
 import CommentForm from '../src/components/CommentForm/CommentForm'
 import VideoList from '../src/components/VideoList/VideoList'
 import Comments from '../src/components/Comments/Comments'
+import DisplayVideo from '../src/components/DisplayVideo/DisplayVideo'
 
 export default function App() {
 
@@ -21,25 +22,33 @@ export default function App() {
   return (
     <>
     <Nav/>
-    
-    <Video
-    videosList={data}
-    activeVideo={defaultVideo}
-    />
 
-    <CommentForm
-    activeVideo={defaultVideo}
-    />
+    <DisplayVideo activeVideo={defaultVideo}/>
+  
+    <div className="app">
+      <div className="app__container">
 
-    <Comments 
-    videoData = {videoData}
-    activeVideo={defaultVideo}
-    />
+            <Video
+            videosList={data}
+            activeVideo={defaultVideo}
+            />
+
+            <CommentForm
+            activeVideo={defaultVideo}
+            />
+
+            <Comments 
+            videoData = {videoData}
+            activeVideo={defaultVideo}
+            />
+      </div>
+
     <VideoList
     selectVideo = {selectVideo}
     videoOption = {defaultVideo}
     videoData = {videoData}/>
     
+  </div>
     </>
   );
 }
