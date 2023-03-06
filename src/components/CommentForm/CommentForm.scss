@@ -28,13 +28,14 @@
         margin: 0;
         justify-content: center;
         width: 100%;
+        border-bottom: 1px solid $secondary-mercury-color;
+
 
         @include tablet{
             position: relative;
             display: flex;
             align-items: center;
             padding-right: 0;
-            border-bottom: 1px solid $secondary-mercury-color;
         }
 
     }

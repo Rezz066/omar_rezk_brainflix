@@ -21,34 +21,34 @@ export default function App() {
   }
   return (
     <>
-    <Nav/>
+        <Nav/>
 
-    <DisplayVideo activeVideo={defaultVideo}/>
-  
-    <div className="app">
-      <div className="app__container">
 
-            <Video
-            videosList={data}
-            activeVideo={defaultVideo}
-            />
+        <DisplayVideo activeVideo={defaultVideo}/>
+      
+        <div className="app">
+          <div className="app__container">
 
-            <CommentForm
-            activeVideo={defaultVideo}
-            />
+                <Video
+                videosList={data}
+                activeVideo={defaultVideo}
+                />
 
-            <Comments 
-            videoData = {videoData}
-            activeVideo={defaultVideo}
-            />
+                <CommentForm
+                activeVideo={defaultVideo}
+                />
+
+                <Comments 
+                videoData = {videoData}
+                activeVideo={defaultVideo}
+                />
+          </div>
+
+        <VideoList
+        selectVideo = {selectVideo}
+        videoOption = {defaultVideo}
+        videoData = {videoData}/>
       </div>
-
-    <VideoList
-    selectVideo = {selectVideo}
-    videoOption = {defaultVideo}
-    videoData = {videoData}/>
-    
-  </div>
     </>
   );
 }
