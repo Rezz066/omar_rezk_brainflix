@@ -14,7 +14,6 @@ const Comments = (props) => {
     return (
         <>
         {(props.activeVideo.comments).map(comment => {
-            console.log(comment)
             return (
                 <VideoComments
                 id={comment.id}

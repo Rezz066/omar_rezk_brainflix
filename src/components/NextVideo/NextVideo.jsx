@@ -10,7 +10,7 @@ const NextVideo = ({image, title, channel, id, selectVideo}) => {
 
     return (
         <>
-            <div className="nextVideo" onClick={handleVideoSelect}>
+            <div className="nextVideo" key={id} onClick={handleVideoSelect}>
                 <img src={image} alt="images" className="nextVideo__image" />
                 <div className="nextVideo__box">
                     <h2 className="nextVideo__title">{title}</h2>

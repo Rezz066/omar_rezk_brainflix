@@ -5,7 +5,7 @@ import './VideoComments.scss'
 
 const VideoComments = (props) => {
     return (
-                <div className ="videoComments">
+                <div className ="videoComments" key={props.id}>
                     <div className ="videoComments__box">
                         <div className ="videoComments__avatar"></div>
                             <div className ="videoComments__header">
