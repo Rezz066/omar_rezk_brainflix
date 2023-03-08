@@ -1,0 +1,22 @@
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/global.scss' as *;
+
+.homepage{
+
+    @include desktop{
+        display: flex;
+    }
+
+    &__container{
+        
+        @include desktop{
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid $secondary-mercury-color;
+            padding-top: 1.5rem;
+            width: 100%;
+        }
+    }
+}
