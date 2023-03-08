@@ -9,11 +9,12 @@ import VideoList from '../src/components/VideoList/VideoList'
 import Comments from '../src/components/Comments/Comments'
 import DisplayVideo from '../src/components/DisplayVideo/DisplayVideo'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import UploadVideoPage from './pages/UploadVideoPage/UploadVideoPage';
 
 export default function App() {
 
   const [defaultVideo, setDefaultVideo] = useState(videoData[0]);
-  
+
   function selectVideo(id) {
     const selectedVideo = videoData.find((video) => {
       return id === video.id;
@@ -21,40 +22,40 @@ export default function App() {
     setDefaultVideo(selectedVideo);
   }
   return (
-    <>
+
     <BrowserRouter>
-        <Nav/>
-        <Routes>
-          <Route path="/" element={<UploadPage/>}/>
-        </Routes>
+      <Nav />
+      <Routes>
+        <Route path="upload-video" element={<UploadVideoPage/>} />
+      </Routes>
 
-        <DisplayVideo activeVideo={defaultVideo}/>
-        
-          <div className="app">
-            <div className="app__container">
+    {/* <DisplayVideo activeVideo={defaultVideo}/>
 
-                  <Video
-                  videosList={data}
-                  activeVideo={defaultVideo}
-                  />
+      <div className="app">
+        <div className="app__container">
 
-                  <CommentForm
-                  activeVideo={defaultVideo}
-                  />
+              <Video
+              videosList={data}
+              activeVideo={defaultVideo}
+              />
 
-                  <Comments 
-                  videoData = {videoData}
-                  activeVideo={defaultVideo}
-                  />
-            </div>
+              <CommentForm
+              activeVideo={defaultVideo}
+              />
 
-          <VideoList
-          selectVideo = {selectVideo}
-          videoOption = {defaultVideo}
-          videoData = {videoData}/>
+              <Comments 
+              videoData = {videoData}
+              activeVideo={defaultVideo}
+              />
         </div>
-      </BrowserRouter>
-    </>
+
+      <VideoList
+      selectVideo = {selectVideo}
+      videoOption = {defaultVideo}
+      videoData = {videoData}/>
+    </div> */}
+    </BrowserRouter>
+
   );
 }
 

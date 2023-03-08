@@ -8,6 +8,9 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    border: 1px solid $secondary-mercury-color;
+    padding-bottom: 1rem ;
+
 
     @include tablet{
         flex-direction: row;
@@ -18,5 +21,6 @@
 
     @include desktop{
         gap: 32rem;
+
     }
 }
