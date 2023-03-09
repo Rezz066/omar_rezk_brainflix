@@ -15,13 +15,14 @@
 
         @include desktop{
             display: flex;
+            justify-content: center;
         }
     }
 
     &__container{
 
         @include desktop{
-            width: 50%;
+            width: 600px;
         }
     }
     &__title{

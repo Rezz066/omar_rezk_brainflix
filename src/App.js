@@ -12,8 +12,9 @@ export default function App() {
       <Nav />
 
         <Routes>
-          <Route path="upload-video" element={<UploadVideoPage/>}/>
-          <Route path="homepage" element={<Homepage/>} />
+          <Route path="/upload-video" element={<UploadVideoPage/>}/>
+          <Route path="/" element={<Homepage/>} />
+          <Route path="/video/:videoId" element={<Homepage/>} />
         </Routes>
 
     </BrowserRouter>

@@ -1,53 +1,92 @@
 import React from 'react';
 import Video from '../../components/Video/Video'
-import videoData from '../../data/video-details.json'
-import data from '../../data/videos.json'
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import CommentForm from '../../components/CommentForm/CommentForm'
 import VideoList from '../../components/VideoList/VideoList'
 import Comments from '../../components/Comments/Comments'
 import DisplayVideo from '../../components/DisplayVideo/DisplayVideo'
 import './Homepage.scss'
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+
+
 
 const Homepage = () => {
 
-    const [defaultVideo, setDefaultVideo] = useState(videoData[0]);
+  //videoList - Next Video List
+  const API_URL = "https://project-2-api.herokuapp.com/videos"
+  const API_KEY = "73873b50-6242-4436-86ca-a7f8bcb7f56b"
 
-  function selectVideo(id) {
-    const selectedVideo = videoData.find((video) => {
-      return id === video.id;
-    });
-    setDefaultVideo(selectedVideo);
-  }
+  const URL = `${API_URL}?api_key=${API_KEY}`
+
+  
+  const [nextVideos, setNextVideos] = useState();
+  const [displayVideo, setDisplayVideo] = useState();
+
+const {videoId} = useParams()
+
+  useEffect(() => {
+    axios.get(`${API_URL}/${videoId}?api_key=${API_KEY}`)
+      .then(res =>
+        setDisplayVideo(res.data))
+      .catch(error => console.log(error))
+  }, [])
+
+
+  useEffect(() => {
+
+    axios.get(URL)
+      .then(result => setNextVideos(result.data))
+        .catch(error => console.log(error))
+      }, [])
+      
+
+  if (!nextVideos || !displayVideo) {
+
     return (
-        <>
-        <DisplayVideo activeVideo={defaultVideo}/>
-        <div className="homepage">
+
+      <><h1>Loading...</h1></>
+
+    )
+
+  }
+
+
+  function selectVideo(videoId) {
+    const selectedVideo = nextVideos.find((video) => {
+      return videoId === video.id;
+    });
+    setNextVideos(selectedVideo);
+  }
+  return (
+    <>
+      <DisplayVideo activeVideo={displayVideo} />
+      <div className="homepage">
         <div className="homepage__container">
 
-              <Video
-              videosList={data}
-              activeVideo={defaultVideo}
-              />
+          <Video
+            activeVideo={displayVideo}
+          />
 
-              <CommentForm
-              activeVideo={defaultVideo}
-              />
+          <CommentForm
+            activeVideo={displayVideo}
+          />
 
-              <Comments 
-              videoData = {videoData}
-              activeVideo={defaultVideo}
-              />
+          <Comments
+            nextVideo={nextVideos}
+            activeVideo={displayVideo}
+          />
         </div>
 
         <VideoList
-            selectVideo = {selectVideo}
-            videoOption = {defaultVideo}
-            videoData = {videoData}
-            />
-        </div>
-        </>
-    );
+          displayVideo={displayVideo}
+          setNextVideos={setNextVideos}
+          selectVideo={selectVideo}
+          nextVideos={nextVideos}
+        />
+      </div>
+    </>
+  );
 };
 
 export default Homepage;
