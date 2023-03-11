@@ -1,11 +1,11 @@
 import './NextVideo.scss'
 import React from 'react';
 
-const NextVideo = ({image, title, channel, id, setDisplayVideo, videoId}) => {
+const NextVideo = ({image, title, channel, id, setDisplayVideo, selectVideo}) => {
 
     const handleOnClick = () => {
         console.log("Video was clicked", id)
-        setDisplayVideo(videoId)
+        setDisplayVideo(selectVideo)
       }
 
     return (

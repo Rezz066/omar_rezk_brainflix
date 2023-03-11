@@ -28,9 +28,6 @@ const Homepage = () => {
       .catch(error => console.log(error))
   }, [])
 
-  // console.log(nextVideos)
-  // console.log(videoId)
-
   useEffect(() => {
     if (nextVideos.length !== 0) {
       axios.get(`${API_URL}/${videoId ? videoId : nextVideos[0].id}?api_key=${API_KEY}`)
@@ -44,12 +41,13 @@ const Homepage = () => {
     return <h1>Loading...</h1>
   }
 
-  // function selectVideo(videoId) {
-  //   const selectedVideo = nextVideos.find((video) => {
-  //     return videoId === video.id;
-  //   });
-  //   setDisplayVideo(selectedVideo);
-  // }
+  function selectVideo(videoId) {
+    const selectedVideo = nextVideos.find((video) => {
+
+      return videoId === video.id;
+    });
+    setDisplayVideo(selectedVideo);
+  }
 
   return (
     <>
@@ -64,14 +62,13 @@ const Homepage = () => {
             />
 
             <CommentForm
-              setActiveVideo={setDisplayVideo}
-              activeVideo={displayVideo}
+             setDisplayVideo={setDisplayVideo}
+              displayVideo={displayVideo}
 
             />
 
             <Comments
-              activeVideo={displayVideo}
-              setActiveVideo={setDisplayVideo}
+              displayVideo={displayVideo}
               nextVideos={nextVideos}
 
             />
@@ -79,10 +76,10 @@ const Homepage = () => {
 
           <VideoList
             displayVideo={displayVideo}
-            setNextVideos={setNextVideos}
             nextVideos={nextVideos}
             videoId={videoId}
             setDisplayVideo={setDisplayVideo}
+            selectVideo={selectVideo}
           />
         </div>
       </>

@@ -3,7 +3,7 @@ import NextVideo from '../NextVideo/NextVideo'
 
 import React from 'react';
 
-const VideoList = ({nextVideos, id, videoId, setDisplayVideo, displayVideo}) => {
+const VideoList = ({nextVideos, id, videoId, displayVideo, setDisplayVideo, selectVideo}) => {
 
     const inactiveVids = nextVideos.filter(video => {
         return video.id !== displayVideo.id
@@ -22,6 +22,7 @@ const VideoList = ({nextVideos, id, videoId, setDisplayVideo, displayVideo}) => 
                     id ={videoItems.id}
                     videoId={videoId}
                     setDisplayVideo={setDisplayVideo}
+                    selectVideo={selectVideo}
                     />
                     </>
                 );

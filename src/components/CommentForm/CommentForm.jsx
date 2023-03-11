@@ -4,12 +4,13 @@ import commentIcon from '../../assets/icons/add_comment.svg'
 
 import React from 'react';
 
-const CommentForm = ({activeVideo}) => {
+const CommentForm = ({displayVideo}) => {
+
     return (
         <>
             
             <div className="form">
-            <p className="form__numComments">{activeVideo.comments.length} Comments</p>
+            <p className="form__numComments">{displayVideo.comments.length} Comments</p>
                     <div className="form__container">
                         <img className="form__avatar" src={avatarImage} alt="mohan-muruge"/>
                         <div className="form__box">
