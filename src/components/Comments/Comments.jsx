@@ -9,11 +9,11 @@ function stringDate(dateInput) {
     return dateString;
 }
 
-const Comments = (props) => {
-
+const Comments = ({activeVideo}) => {
+    
+    console.log(activeVideo)
     return (
-        <>
-        {(props.activeVideo.comments).map(comment => {
+        (activeVideo.comments).map(comment => {
             return (
                 <VideoComments
                 id={comment.id}
@@ -22,8 +22,7 @@ const Comments = (props) => {
                 comment={comment.comment}
                 />
                     )
-             })}
-        </>
+             })
     );
 };
 

@@ -9,82 +9,84 @@ import './Homepage.scss'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
+const API_URL = "https://project-2-api.herokuapp.com/videos"
+const API_KEY = "73873b50-6242-4436-86ca-a7f8bcb7f56b"
 
+const URL = `${API_URL}?api_key=${API_KEY}`
 
 const Homepage = () => {
 
-  //videoList - Next Video List
-  const API_URL = "https://project-2-api.herokuapp.com/videos"
-  const API_KEY = "73873b50-6242-4436-86ca-a7f8bcb7f56b"
-
-  const URL = `${API_URL}?api_key=${API_KEY}`
-
-  
-  const [nextVideos, setNextVideos] = useState();
-  const [displayVideo, setDisplayVideo] = useState();
-
-const {videoId} = useParams()
+  const [nextVideos, setNextVideos] = useState([]);
+  const [displayVideo, setDisplayVideo] = useState(null);
+  const { videoId } = useParams()
 
   useEffect(() => {
-    axios.get(`${API_URL}/${videoId}?api_key=${API_KEY}`)
-      .then(res =>
-        setDisplayVideo(res.data))
+    axios.get(URL)
+      .then(result => {
+        setNextVideos(result.data)
+      })
       .catch(error => console.log(error))
   }, [])
 
+  // console.log(nextVideos)
+  // console.log(videoId)
 
   useEffect(() => {
-
-    axios.get(URL)
-      .then(result => setNextVideos(result.data))
+    if (nextVideos.length !== 0) {
+      axios.get(`${API_URL}/${videoId ? videoId : nextVideos[0].id}?api_key=${API_KEY}`)
+        .then(result => setDisplayVideo(result.data))
         .catch(error => console.log(error))
-      }, [])
-      
+    }
 
-  if (!nextVideos || !displayVideo) {
+  }, [videoId, nextVideos])
 
-    return (
-
-      <><h1>Loading...</h1></>
-
-    )
-
+  if (!displayVideo) {
+    return <h1>Loading...</h1>
   }
 
+  // function selectVideo(videoId) {
+  //   const selectedVideo = nextVideos.find((video) => {
+  //     return videoId === video.id;
+  //   });
+  //   setDisplayVideo(selectedVideo);
+  // }
 
-  function selectVideo(videoId) {
-    const selectedVideo = nextVideos.find((video) => {
-      return videoId === video.id;
-    });
-    setNextVideos(selectedVideo);
-  }
   return (
     <>
-      <DisplayVideo activeVideo={displayVideo} />
-      <div className="homepage">
-        <div className="homepage__container">
+      (
+      <>
+        <DisplayVideo activeVideo={displayVideo} />
+        <div className="homepage">
+          <div className="homepage__container">
 
-          <Video
-            activeVideo={displayVideo}
-          />
+            <Video
+              activeVideo={displayVideo}
+            />
 
-          <CommentForm
-            activeVideo={displayVideo}
-          />
+            <CommentForm
+              setActiveVideo={setDisplayVideo}
+              activeVideo={displayVideo}
 
-          <Comments
-            nextVideo={nextVideos}
-            activeVideo={displayVideo}
+            />
+
+            <Comments
+              activeVideo={displayVideo}
+              setActiveVideo={setDisplayVideo}
+              nextVideos={nextVideos}
+
+            />
+          </div>
+
+          <VideoList
+            displayVideo={displayVideo}
+            setNextVideos={setNextVideos}
+            nextVideos={nextVideos}
+            videoId={videoId}
+            setDisplayVideo={setDisplayVideo}
           />
         </div>
-
-        <VideoList
-          displayVideo={displayVideo}
-          setNextVideos={setNextVideos}
-          selectVideo={selectVideo}
-          nextVideos={nextVideos}
-        />
-      </div>
+      </>
+      )
     </>
   );
 };

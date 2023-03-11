@@ -3,12 +3,11 @@ import NextVideo from '../NextVideo/NextVideo'
 
 import React from 'react';
 
-const VideoList = ({selectVideo, nextVideos, displayVideo, id}) => {
-    const inactiveVids = nextVideos.filter((vids) => {
-        console.log(nextVideos)
-        return vids.id !== displayVideo.id;
+const VideoList = ({nextVideos, id, videoId, setDisplayVideo, displayVideo}) => {
 
-    });
+    const inactiveVids = nextVideos.filter(video => {
+        return video.id !== displayVideo.id
+    })
 
     return (
         <div className="videoList" key={id}>
@@ -21,7 +20,8 @@ const VideoList = ({selectVideo, nextVideos, displayVideo, id}) => {
                     title ={videoItems.title}
                     channel ={videoItems.channel}
                     id ={videoItems.id}
-                    selectVideo={selectVideo}
+                    videoId={videoId}
+                    setDisplayVideo={setDisplayVideo}
                     />
                     </>
                 );
