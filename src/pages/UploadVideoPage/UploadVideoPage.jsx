@@ -2,6 +2,7 @@ import React from 'react';
 import videoThumbnail from "../../assets/images/Upload-video-preview.jpg"
 import "./UploadVideoPage.scss"
 import Publish from '../../assets/icons/publish.svg'
+import { Link } from 'react-router-dom';
 
 const UploadVideoPage = () => {
     return (
@@ -22,7 +23,10 @@ const UploadVideoPage = () => {
             </div>
             <div className="uploadVideo__boxButton">
             <button className="uploadVideo__button uploadVideo__buttonTab--link"><img src={Publish} className="uploadVideo__buttonIcon"alt="" /><p className="uploadVideo__publish">PUBLISH</p></button>
+
+            <Link className="uploadVideo__link" to="/">
             <button className="uploadVideo__buttonTab"><p className="uploadVideo__cancel">CANCEL</p></button>
+            </Link>
             </div>
         </div>
         </>

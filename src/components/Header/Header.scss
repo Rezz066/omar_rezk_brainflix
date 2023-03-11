@@ -129,6 +129,7 @@
         position: relative;
         justify-content: center;
         align-items: center;
+        
 
         @include tablet {
             display: none;
@@ -140,6 +141,10 @@
         left: 1.025rem;
 
 
+    }
+
+    &__link{
+        text-decoration: none;
     }
 
     &__button p{
