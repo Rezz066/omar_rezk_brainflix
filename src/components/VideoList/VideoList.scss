@@ -6,7 +6,6 @@
 
 .videoList{
     padding: 0 1rem 0 1rem;
-
     @include tablet{
         padding: 0 2.25rem 0 2.25rem;
     }
@@ -21,9 +20,16 @@
         padding-top: 1rem;
         color: $primary-silver-color;
         font-weight: 700;
+        text-decoration: none;
+
 
         @include tablet{
             font-weight: 600;
         }
+    }
+
+    &__link{
+        text-decoration: none;
+        color: $primary-brainflix-black-color;
     }
 }

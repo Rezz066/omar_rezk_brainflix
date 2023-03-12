@@ -22,11 +22,18 @@ const UploadVideoPage = () => {
             </div>
             </div>
             <div className="uploadVideo__boxButton">
-            <button className="uploadVideo__button uploadVideo__buttonTab--link"><img src={Publish} className="uploadVideo__buttonIcon"alt="" /><p className="uploadVideo__publish">PUBLISH</p></button>
-
+            <button className="uploadVideo__button uploadVideo__buttonTab--link">
             <Link className="uploadVideo__link" to="/">
-            <button className="uploadVideo__buttonTab"><p className="uploadVideo__cancel">CANCEL</p></button>
+            <img src={Publish} className="uploadVideo__buttonIcon"alt="" />
+            <p className="uploadVideo__publish">PUBLISH</p>
             </Link>
+            </button>
+
+            <button className="uploadVideo__buttonTab">
+                <Link className="uploadVideo__link" to="/">
+                <p className="uploadVideo__cancel">CANCEL</p>
+                </Link>
+            </button>
             </div>
         </div>
         </>

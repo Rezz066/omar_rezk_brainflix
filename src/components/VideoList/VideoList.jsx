@@ -1,12 +1,12 @@
 import './VideoList.scss'
 import NextVideo from '../NextVideo/NextVideo'
-
 import React from 'react';
+import {Link} from 'react-router-dom'
 
-const VideoList = ({nextVideos, id, videoId, displayVideo, setDisplayVideo, selectVideo}) => {
+const VideoList = ({nextVideos, id, videoId, displayVideo}) => {
 
     const inactiveVids = nextVideos.filter(video => {
-        return video.id !== displayVideo.id
+        return displayVideo.id !== video.id
     })
 
     return (
@@ -15,16 +15,17 @@ const VideoList = ({nextVideos, id, videoId, displayVideo, setDisplayVideo, sele
             {inactiveVids.map((videoItems) => {
                 return (
                     <>
+            <Link className="videoList__link" to={`/video/${videoItems.id}`}>
                    <NextVideo
                     image = {videoItems.image}
                     title ={videoItems.title}
                     channel ={videoItems.channel}
                     id ={videoItems.id}
+                    displayVideo={displayVideo}
                     videoId={videoId}
-                    setDisplayVideo={setDisplayVideo}
-                    selectVideo={selectVideo}
                     />
-                    </>
+            </Link>
+                 </>
                 );
             })}
         </div>

@@ -7,7 +7,6 @@
     display: flex;
     padding-bottom: 1rem;
 
-
     &__image{
         width: 11rem;
         height: 6.5rem;
@@ -29,6 +28,8 @@
         font-size: .8125rem;
         line-height: 1.125rem;
         font-weight: 700;
+        text-decoration: none;
+
 
     }
 
@@ -36,6 +37,8 @@
         font-size: .8125rem;
         line-height: 1.125rem;
         font-weight: 400;
+        text-decoration: none;
+
 
     }
 }

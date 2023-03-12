@@ -18,7 +18,8 @@ const Homepage = () => {
 
   const [nextVideos, setNextVideos] = useState([]);
   const [displayVideo, setDisplayVideo] = useState(null);
-  const { videoId } = useParams()
+
+  let { videoId } = useParams()
 
   useEffect(() => {
     axios.get(URL)
@@ -41,13 +42,13 @@ const Homepage = () => {
     return <h1>Loading...</h1>
   }
 
-  function selectVideo(videoId) {
+  const selectVideo = () => {
     const selectedVideo = nextVideos.find((video) => {
-
-      return videoId === video.id;
-    });
-    setDisplayVideo(selectedVideo);
+      return videoId === video.id      
+    })
+    displayVideo(selectedVideo)
   }
+
 
   return (
     <>
@@ -62,7 +63,6 @@ const Homepage = () => {
             />
 
             <CommentForm
-             setDisplayVideo={setDisplayVideo}
               displayVideo={displayVideo}
 
             />
@@ -75,11 +75,9 @@ const Homepage = () => {
           </div>
 
           <VideoList
-            displayVideo={displayVideo}
             nextVideos={nextVideos}
             videoId={videoId}
-            setDisplayVideo={setDisplayVideo}
-            selectVideo={selectVideo}
+            displayVideo={displayVideo}
           />
         </div>
       </>
