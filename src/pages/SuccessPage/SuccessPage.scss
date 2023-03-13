@@ -9,6 +9,26 @@
     @include tablet{
         padding: 0 2.5rem 0 2.5rem;
     }
+
+    &__header{
+        color: $primary-brainflix-blue-color;
+        text-align: center;
+        font-size: 4rem;
+        padding-bottom: 3rem;
+        padding-top: 3rem;
+        line-height: 4rem;
+        font-weight: 700;
+    }
+
+    &__title{
+        color: $secondary-brainflix-darkblue-color;
+        text-align: center;
+        font-size: 3rem;
+        padding-bottom: 3rem;
+        padding-top: 3rem;
+        line-height: 4rem;
+        font-weight: 700;
+    }
     &__button{
     
         background-color: $primary-brainflix-blue-color;
@@ -20,5 +40,13 @@
         position: relative;
         margin-bottom: 1rem;
         margin-top: 1rem;
+    }
+
+    &__text{
+            color: $primary-white-color;
+            text-align: center;
+            font-size: 1rem;
+            line-height: 1.25rem;
+            font-weight: 700;
     }
 }
