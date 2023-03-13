@@ -2,12 +2,7 @@ import './NextVideo.scss'
 import React from 'react';
 import {Link} from 'react-router-dom'
 
-const NextVideo = ({image, title, channel, id, displayVideo}) => {
-
-    // const handleOnClick = () => {
-    //     console.log("Video was clicked", id)
-    //     selectVideo(id)
-    //   }
+const NextVideo = ({image, title, channel, id}) => {
 
     return (
         <>
