@@ -1,0 +1,24 @@
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/global.scss' as *;
+
+.successPage{
+    padding: 0 1rem 0 1rem;
+
+    @include tablet{
+        padding: 0 2.5rem 0 2.5rem;
+    }
+    &__button{
+    
+        background-color: $primary-brainflix-blue-color;
+        border: 0;
+        border-radius: .25rem;
+        width: 100%;
+        padding: 1rem;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+}

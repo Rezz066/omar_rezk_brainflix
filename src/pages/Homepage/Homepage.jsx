@@ -42,17 +42,8 @@ const Homepage = () => {
     return <h1>Loading...</h1>
   }
 
-  const selectVideo = () => {
-    const selectedVideo = nextVideos.find((video) => {
-      return videoId === video.id      
-    })
-    displayVideo(selectedVideo)
-  }
-
-
   return (
     <>
-      (
       <>
         <DisplayVideo activeVideo={displayVideo} />
         <div className="homepage">

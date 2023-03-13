@@ -3,11 +3,22 @@ import videoThumbnail from "../../assets/images/Upload-video-preview.jpg"
 import "./UploadVideoPage.scss"
 import Publish from '../../assets/icons/publish.svg'
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const UploadVideoPage = () => {
+
+    const navigate = useNavigate();
+
+      const handleSubmit = (event) => {
+        event.preventDefault();
+
+        navigate('/success')
+
+      };
+
     return (
         <>
-        <div className="uploadVideo">
+        <form className="uploadVideo" onSubmit={handleSubmit}>
                 <h1 className="uploadVideo__title">Upload Video</h1>
             <div className="uploadVideo__containerAll">
                 <div className="uploadVideo__container">
@@ -16,17 +27,15 @@ const UploadVideoPage = () => {
                 </div>
             <div className="uploadVideo__box">
                 <h2 className="uploadVideo__formTitle">TITLE YOUR VIDEO</h2>
-                <textarea className="uploadVideo__formMessage" name="comments" id="comments" placeholder="Add a title to your video"></textarea>
+                <input className="uploadVideo__formMessage" name="comment" id="title" placeholder="Add a title to your video"></input>
                 <h2 className="uploadVideo__formTitle">ADD A VIDEO DESCRIPTION</h2>
-                <textarea className="uploadVideo__formText" name="comments" id="comments" placeholder="Add a description to your video"></textarea>
+                <textarea className="uploadVideo__formText" name="comment" id="description" placeholder="Add a description to your video"></textarea>
             </div>
             </div>
             <div className="uploadVideo__boxButton">
-            <button className="uploadVideo__button uploadVideo__buttonTab--link">
-            <Link className="uploadVideo__link" to="/">
-            <img src={Publish} className="uploadVideo__buttonIcon"alt="" />
+            <button className="uploadVideo__button uploadVideo__buttonTab--link" type="submit">
+            <img src={Publish} className="uploadVideo__buttonIcon"alt="publish-icon"/>
             <p className="uploadVideo__publish">PUBLISH</p>
-            </Link>
             </button>
 
             <button className="uploadVideo__buttonTab">
@@ -35,7 +44,7 @@ const UploadVideoPage = () => {
                 </Link>
             </button>
             </div>
-        </div>
+        </form>
         </>
     );
 };
