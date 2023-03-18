@@ -12,7 +12,7 @@ import axios from 'axios';
 const API_URL = "https://project-2-api.herokuapp.com/videos"
 const API_KEY = "73873b50-6242-4436-86ca-a7f8bcb7f56b"
 
-const URL = `${API_URL}?api_key=${API_KEY}`
+// const URL = `${API_URL}?api_key=${API_KEY}`
 
 const Homepage = () => {
 
@@ -22,7 +22,7 @@ const Homepage = () => {
   let { videoId } = useParams()
 
   useEffect(() => {
-    axios.get(URL)
+    axios.get(`http://localhost:8081/videos`)
       .then(result => {
         setNextVideos(result.data)
       })

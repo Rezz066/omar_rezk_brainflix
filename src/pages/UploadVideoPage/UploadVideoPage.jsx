@@ -2,19 +2,73 @@ import React from 'react';
 import videoThumbnail from "../../assets/images/Upload-video-preview.jpg"
 import "./UploadVideoPage.scss"
 import Publish from '../../assets/icons/publish.svg'
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const UploadVideoPage = () => {
 
+
+
+
+
     const navigate = useNavigate();
 
-      const handleSubmit = (event) => {
-        event.preventDefault();
+    // event.preventDefault();
+        
 
-        navigate('/success')
+    // const title = event.target.title.value;
+    // const author = event.target.author.value;
+    // const rating = event.target.rating.value;
+    // const poster = `http://localhost:8080/images/placeholder.jpeg`
+    // const summary = event.target.summary.value;
+    // const review = event.target.review.value;
+    // console.log(title,author,rating,poster,summary,review);
+   
+    // const newBook = {
+    //     title,
+    //     author,
+    //     rating,
+    //     poster,
+    //     summary,
+    //     review
+    // }
 
-      };
+    // axios.post('http://localhost:8080/books',newBook)
+    // .then((res)=>{
+
+    // })
+    // .catch((error)=>{
+    //     console.log("error making a new book",error)
+    // })
+    // event.target.reset()
+    // navigateToHome('/')
+
+
+    const handleSubmit = (event) => {
+    event.preventDefault();
+
+
+    const title = event.target.title.value;
+    const description = event.target.description.value;
+
+    console.log(title, description)
+
+    const newVideo = {
+        title,
+        description,
+    }
+
+    axios.post(`http://localhost:8081/videos`,newVideo)
+    .then((res)=>{
+        console.log(res.data)
+    })
+    .catch((error)=>{
+        console.log("error making a new video",error)
+    })
+    event.target.reset()
+    navigate('/')
+
+        };
 
     return (
         <>
@@ -28,10 +82,10 @@ const UploadVideoPage = () => {
 
                 <div className="uploadVideo__box">
                     <h2 className="uploadVideo__formTitle">TITLE YOUR VIDEO</h2>
-                    <input className="uploadVideo__formMessage" name="comment"  id="title" placeholder="Add a title to your video"></input>
+                    <input className="uploadVideo__formMessage" name="title"  id="title" placeholder="Add a title to your video"></input>
 
                     <h2 className="uploadVideo__formTitle">ADD A VIDEO DESCRIPTION</h2>
-                    <textarea className="uploadVideo__formText" name="comment"  id="description" placeholder="Add a description to your video"></    textarea>
+                    <textarea className="uploadVideo__formText" name="description"  id="description" placeholder="Add a description to your video"></textarea>
 
                 </div>
             </div>
