@@ -8,42 +8,9 @@ import axios from 'axios';
 const UploadVideoPage = () => {
 
 
-
-
-
     const navigate = useNavigate();
 
-    // event.preventDefault();
-        
-
-    // const title = event.target.title.value;
-    // const author = event.target.author.value;
-    // const rating = event.target.rating.value;
-    // const poster = `http://localhost:8080/images/placeholder.jpeg`
-    // const summary = event.target.summary.value;
-    // const review = event.target.review.value;
-    // console.log(title,author,rating,poster,summary,review);
    
-    // const newBook = {
-    //     title,
-    //     author,
-    //     rating,
-    //     poster,
-    //     summary,
-    //     review
-    // }
-
-    // axios.post('http://localhost:8080/books',newBook)
-    // .then((res)=>{
-
-    // })
-    // .catch((error)=>{
-    //     console.log("error making a new book",error)
-    // })
-    // event.target.reset()
-    // navigateToHome('/')
-
-
     const handleSubmit = (event) => {
     event.preventDefault();
 

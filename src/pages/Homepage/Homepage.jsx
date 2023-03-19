@@ -9,16 +9,13 @@ import './Homepage.scss'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const API_URL = "https://project-2-api.herokuapp.com/videos"
-const API_KEY = "73873b50-6242-4436-86ca-a7f8bcb7f56b"
-
-// const URL = `${API_URL}?api_key=${API_KEY}`
 
 const Homepage = () => {
 
   const [nextVideos, setNextVideos] = useState([]);
   const [displayVideo, setDisplayVideo] = useState(null);
 
+  console.log(nextVideos)
   let { videoId } = useParams()
 
   useEffect(() => {
@@ -30,10 +27,10 @@ const Homepage = () => {
   }, [])
 
   useEffect(() => {
-    if (nextVideos.length !== 0) {
-      axios.get(`${API_URL}/${videoId ? videoId : nextVideos[0].id}?api_key=${API_KEY}`)
-        .then(result => setDisplayVideo(result.data))
-        .catch(error => console.log(error))
+    if (nextVideos.length !== 0) {  
+      axios.get(`http://localhost:8081/videos/${videoId ? videoId : nextVideos[0].id}`)
+      .then(result => setDisplayVideo(result.data))
+      .catch(error => console.log(error))
     }
 
   }, [videoId, nextVideos])
