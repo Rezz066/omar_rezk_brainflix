@@ -33,9 +33,9 @@ const UploadVideoPage = () => {
         console.log("error making a new video",error)
     })
     event.target.reset()
-    navigate('/')
+    navigate('/loading')
 
-        };
+    };
 
     return (
         <>

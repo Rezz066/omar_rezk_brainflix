@@ -8,6 +8,7 @@ import DisplayVideo from '../../components/DisplayVideo/DisplayVideo'
 import './Homepage.scss'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import Loadingpage from '../Loadingpage/Loadingpage';
 
 
 const Homepage = () => {
@@ -36,7 +37,7 @@ const Homepage = () => {
   }, [videoId, nextVideos])
 
   if (!displayVideo) {
-    return <h1>Loading...</h1>
+    return <p>Loading...</p>
   }
 
   return (
