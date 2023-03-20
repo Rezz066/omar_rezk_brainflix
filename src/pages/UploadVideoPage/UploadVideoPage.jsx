@@ -2,7 +2,7 @@ import React from 'react';
 import videoThumbnail from "../../assets/images/Upload-video-preview.jpg"
 import "./UploadVideoPage.scss"
 import Publish from '../../assets/icons/publish.svg'
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const UploadVideoPage = () => {
@@ -14,9 +14,34 @@ const UploadVideoPage = () => {
     const handleSubmit = (event) => {
     event.preventDefault();
 
-
+    
     const title = event.target.title.value;
     const description = event.target.description.value;
+    
+/*
+    I was trying to a validation form with styling -- please let's look into it later
+    
+    const inValid = () => {
+        const errors = {};
+
+        if (!title) {
+             errors.title = 'Please Enter a Title'
+             return errors
+        }
+        if (!description) {
+            errors.description = 'Please Enter a Title'
+            return errors
+       }
+       return errors
+    }
+    if (!title || !description){
+        inValid()
+    }
+    */
+
+    if (!title || !description){
+        return false
+    }
 
     console.log(title, description)
 
@@ -36,6 +61,10 @@ const UploadVideoPage = () => {
     navigate('/loading')
 
     };
+
+    const handelCancel  = () => {
+        navigate('/')
+    }
 
     return (
         <>
@@ -63,10 +92,8 @@ const UploadVideoPage = () => {
                     <p className="uploadVideo__publish">PUBLISH</p>
                 </button>
 
-                <button className="uploadVideo__buttonTab">
-                    <Link className="uploadVideo__link" to="/">
+                <button onClick={handelCancel} className="uploadVideo__buttonTab">
                     <p className="uploadVideo__cancel">CANCEL</p>
-                    </Link>
                 </button>
             </div>
         </form>
